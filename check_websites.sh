@@ -12,11 +12,11 @@ echo ""
 
 websites=$(cat websites.txt)
 for website in $websites; do
-	# Remove '/' at the end if present.
-	filename=$(echo $website|sed 's/\/$//')
+	# Remove http:// or https:// if present.
+	filename=$(echo $website|cut -d '/' -f3-)".txt"
+	# Remove '/' if present in the name. Add directory location.
+	filename="./tmp/"$(echo $filename|sed 's/\///g')
 	echo "Attempting to download the file for $filename."
-	# Remove http:// or https:// if present. Add the directory.
-	filename="./tmp/"$(echo $filename|rev|cut -d '/' -f1|rev)".txt"
 	# Get the webpage and save to a file in the tmp directory.
 	torify wget -c $website -O $filename
 done
