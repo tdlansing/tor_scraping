@@ -9,19 +9,11 @@ echo ""
 echo "Updating Linux packages list."
 apt-get update -y
 echo ""
+echo "Installing curl if not installed."
+apt-get install -y curl
+echo ""
 echo "Installing TOR if not installed."
 apt-get install -y tor
-#
-# Uncomment the following lines if using Python to perform webpage scraping.
-# and they are needed. Python seems to be common and the requests library
-# will likely nbe needed.
-#
-#echo ""
-#echo "Installing pip if not installed."
-#apt-get install -y python3-pip
-#echo ""
-#echo "Installing Python3 requests if not installed."
-#pip3 install requests
 
 echo ""
 echo "------------------------------------------------------------------------"
