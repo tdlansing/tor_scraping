@@ -19,7 +19,7 @@ indicators=$(cat indicators.txt)
 for website in $websites; do
 	# Remove http:// or https:// if present.
 	filename=$(echo $website|cut -d '/' -f3-)".txt"
-	# Replace '/' with '_' if present in the name. Add directory location.
+	# Replace '/' with '`' if present in the name. Add directory location.
 	filename="./tmp/"$(echo $filename|sed 's/\//`/g')
 	echo "Attempting to download the file for $filename." | tee -a results.txt
 	# Get the webpage and save to a file in the tmp directory.
