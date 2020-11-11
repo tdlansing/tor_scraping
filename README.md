@@ -11,4 +11,7 @@ Set 'CookieAuthentication 0'.
 Restart TOR with 'sudo /etc/init.d/tor restart'.
 
 Execution:
-To run the program execute './check_websites.sh'.
+1. List the websites to check in websites.txt. Include "http://" and "https://" as appropriate.
+2. List the terms to look for in indicators.txt. Terms are searched for using grep. Add searches in grep's format. Spaces would look like "\ ".
+3. Run the program by executing "./check_websites.sh".
+4. Review the results in "results.txt".
